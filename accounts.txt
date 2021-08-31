@@ -1,0 +1,2 @@
+amazon_email_here:amazon_password_here
+bot_email_here:bot_password_here
