@@ -12,7 +12,7 @@ import smtplib
 options = wb.ChromeOptions()
 # helps to take full screenshot of the browser and not just the visible window
 options.headless = False
-WBD = wb.Chrome('/Users/yonas/Desktop/auto/chromedriver', options=options)
+WBD = wb.Chrome('/path_to_chromedriver', options=options)
 
 
 def log_in():
@@ -108,7 +108,7 @@ def cart_info():
     file_location = '/Users/yonas/Desktop/auto/cart_screenshot.png'
     msg = MIMEMultipart()
     msg['From'] = senderId
-    msg['To'] = 'yonasgbzb@gmail.com'
+    msg['To'] = 'email address that you want the cart screenshot to be sent to'
     msg['Subject'] = 'Amazon Cart Info'
     msg.attach(MIMEText(
         'Please review the cart and confirm on the terminal window.', 'plain'))
@@ -124,7 +124,7 @@ def cart_info():
     server.starttls()
     server.login(senderId, senderpass)
     text = msg.as_string()
-    server.sendmail(senderId, 'yonasgbzb@gmail.com', text)
+    server.sendmail(senderId, 'enter same email as before', text)
     server.quit()
 
 
@@ -171,4 +171,4 @@ def main(file_name):
     WBD.close()
 
 
-main('buy_list.txt')
+main('buy_list.txt') #enter a text file with each order on a separate lines
