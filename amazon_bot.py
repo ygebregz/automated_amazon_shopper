@@ -85,7 +85,7 @@ def find_matches(records, key_words):
 
 
 def add_to_cart(product_url):
-    """adds the decided on product to cart"""
+    """adds the decided product to cart"""
     WBD.get(product_url)
     WBD.find_element_by_xpath('//*[@id="add-to-cart-button"]').click()
     WBD.implicitly_wait(5)
